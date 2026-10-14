@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>VACA Media | Respostas enviadas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --escuro: #1A1A1A;
+      --escuro-2: #2A2A2A;
+      --coral: #FE696E;
+      --claro: #F1F1EC;
+      --branco: #FFFFFF;
+      --texto-suave: rgba(241, 241, 236, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      color: var(--claro);
+      background:
+        radial-gradient(120% 60% at 0% 100%, rgba(254, 105, 110, 0.28), transparent 60%),
+        var(--escuro);
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .pagina {
+      min-height: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+      padding: calc(20px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Cabeçalho igual ao do formulário */
+    .topo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .marca {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--branco);
+    }
+
+    .etapa {
+      font-size: 12px;
+      color: var(--texto-suave);
+    }
+
+    .barra-etapas {
+      height: 4px;
+      border-radius: 4px;
+      background: var(--coral);
+      margin: 14px 0 0;
+    }
+
+    /* Conteúdo central */
+    .conteudo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 36px;
+    }
+
+    .confirmacao {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--coral);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--branco);
+      margin-bottom: 28px;
+    }
+
+    .confirmacao::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    /* Só aparece se CONFIG.foto estiver preenchido */
+    .foto {
+      display: none;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 2px solid var(--coral);
+      background: var(--escuro-2);
+      margin: 0 0 18px;
+      overflow: hidden;
+    }
+
+    .foto.com-imagem {
+      display: block;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(38px, 11vw, 48px);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+    }
+
+    h1 .linha-1 {
+      display: block;
+      color: var(--branco);
+    }
+
+    h1 .linha-2 {
+      display: block;
+      color: var(--coral);
+    }
+
+    .texto {
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--texto-suave);
+      max-width: 34ch;
+    }
+
+    .texto strong {
+      color: var(--branco);
+      font-weight: 700;
+    }
+
+    /* Botão */
+    .rodape {
+      padding-top: 32px;
+      text-align: center;
+    }
+
+    .botao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--coral);
+      color: var(--escuro);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 17px 20px;
+      border-radius: 12px;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .botao:hover {
+      filter: brightness(1.05);
+    }
+
+    .botao:active {
+      transform: scale(0.98);
+    }
+
+    .botao:focus-visible {
+      outline: 3px solid var(--branco);
+      outline-offset: 3px;
+    }
+
+    .botao svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .ajuda {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--texto-suave);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .botao {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+    <header>
+      <div class="topo">
+        <div>
+          <div class="marca">VACA Media</div>
+          <div class="etapa">Etapa final</div>
+        </div>
+      </div>
+      <div class="barra-etapas" aria-hidden="true"></div>
+    </header>
+
+    <section class="conteudo">
+      <div class="confirmacao">Respostas enviadas com sucesso</div>
+
+      <div class="foto" id="foto" aria-hidden="true"></div>
+
+      <h1>
+        <span class="linha-1" id="saudacao">Tudo certo!</span>
+        <span class="linha-2">Ainda falta um passo</span>
+      </h1>
+
+      <p class="texto">
+        Nosso time já recebeu suas respostas e vai falar com você pelo WhatsApp em até <strong>5 minutos</strong>. Adiante a conversa clicando abaixo.
+      </p>
+    </section>
+
+    <footer class="rodape">
+      <a class="botao" id="botao-whatsapp" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.22-8.23 8.22Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z" />
+        </svg>
+        Enviar Mensagem
+      </a>
+      <p class="ajuda">Abre o WhatsApp com a mensagem pronta</p>
+    </footer>
+  </main>
+
+  <script>
+    /* =========================================================
+       CONFIGURAÇÕES: preencha só este bloco
+       ========================================================= */
+    const CONFIG = {
+      // ID do Pixel (Gerenciador de Eventos do Meta → Conjuntos de dados)
+      pixelId: "886709091103284",
+
+      // Número do WhatsApp da VACA: só dígitos, com DDI e DDD (ex.: 5511999999999)
+      whatsapp: "5511927461217",
+
+      // Mensagem
+      mensagemSemNome: "Olá! Acabei de responder o diagnóstico da VACA e quero saber mais sobre a consultoria.",
+
+    };
+    /* ========================================================= */
+
+    // 1) Lê as respostas que o Tally manda no link
+    const params = new URLSearchParams(window.location.search);
+    const faturamento = (params.get("fat") || "").trim();
+    const nomeCompleto = (params.get("nome") || "").trim();
+
+    // 2) Decide se o lead é qualificado (faturamento a partir de R$ 30 mil: respostas B, C ou D)
+    function normalizar(texto) {
+      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ");
+    }
+    const fat = normalizar(faturamento);
+    const qualificado =
+      fat.includes("30 mil a") ||   // B) R$ 30 mil a R$ 100 mil
+      fat.includes("100 mil a") ||  // C) R$ 100 mil a R$ 500 mil
+      fat.includes("acima");        // D) Acima de R$ 500 mil
+    // A) "Até R$ 30 mil" não entra em nenhuma das regras acima
+
+    // 3) Pixel do Meta
+    const pixelConfigurado = /^\d+$/.test(CONFIG.pixelId);
+
+    if (pixelConfigurado) {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        }; if (!f._fbq) f._fbq = n;
+        n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+      }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq("init", CONFIG.pixelId);
+      fbq("track", "PageView");
+
+      // Evita disparar duas vezes se a página for recarregada
+      let jaEnviado = false;
+      try { jaEnviado = sessionStorage.getItem("vaca_evento_enviado") === "1"; } catch (e) { }
+
+      if (!jaEnviado) {
+        // Todo envio do formulário (útil para comparar e para diagnóstico)
+        fbq("trackCustom", "EnvioFormulario", { faixa_faturamento: faturamento || "não informado" });
+
+        // Só leads qualificados viram "Lead", o evento usado para otimizar a campanha
+        if (qualificado) {
+          fbq("track", "Lead", { content_name: "Diagnóstico VACA", faixa_faturamento: faturamento });
+        }
+
+        try { sessionStorage.setItem("vaca_evento_enviado", "1"); } catch (e) { }
+      }
+    } else {
+      console.warn("Pixel não configurado: preencha CONFIG.pixelId. Lead qualificado?", qualificado, "| faturamento:", faturamento);
+    }
+
+    // 4) Monta a mensagem e o link do WhatsApp
+    const primeiroNome = nomeCompleto.split(/\s+/)[0] || "";
+    const nomeFormatado = primeiroNome
+      ? primeiroNome.charAt(0).toUpperCase() + primeiroNome.slice(1)
+      : "";
+
+    const mensagem = nomeFormatado
+      ? CONFIG.mensagemComNome.replace("{nome}", nomeFormatado)
+      : CONFIG.mensagemSemNome;
+
+    const linkWhatsapp = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(mensagem);
+
+    // 5) Preenche a página
+    document.getElementById("botao-whatsapp").href = linkWhatsapp;
+    if (nomeFormatado) {
+      document.getElementById("saudacao").textContent = "Tudo certo, " + nomeFormatado + "!";
+    }
+    if (CONFIG.foto) {
+      const img = document.createElement("img");
+      img.src = CONFIG.foto;
+      img.alt = "";
+      img.onload = () => { const f = document.getElementById("foto"); f.appendChild(img); f.classList.add("com-imagem"); };
+    }
+  </script>
+</body>
+
+</html>
